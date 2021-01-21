@@ -7,7 +7,7 @@ class Login:
         global root
         self.v = []
         self.root = Tk()
-        self.root.title('Window')
+        self.root.title('MQTT')
         self.root.geometry('500x500')
         Label(text="").pack()
         Label(text="").pack()
@@ -52,7 +52,6 @@ class Login:
         password_entry.pack()
 
         Label(self.register_screen, text="").pack()
-
         # buton inregistrare
         Button(self.register_screen, text="Inregistrare", width=10, height=1, bg="black", fg="white", command=self.register_user).pack()
 
@@ -81,7 +80,7 @@ class Login:
 
         self.login_screen = Toplevel(self.root)
         self.login_screen.title("Autentificare")
-        self.login_screen.geometry("300x250")
+        self.login_screen.geometry("300x300")
         Label(self.login_screen, text="").pack()
         Label(self.login_screen, text="Campurile marcate cu * sunt obligatorii!").pack()
         Label(self.login_screen, text="").pack()
@@ -117,6 +116,6 @@ class Login:
                 t = Topics()
             else:
                 Label(self.login_screen, text="Parola incorecta", fg="red", font=("calibri", 11)).pack()
+
         else:
             Label(self.login_screen, text="Utilizator invalid", fg="red", font=("calibri", 11)).pack()
-
